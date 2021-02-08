@@ -14,17 +14,16 @@ async function getAll(){
             </td>
             </tr>`
             strOption+=`<option>${body[e].name}</option>`
-            document.getElementById("DDuniversities").innerHTML+=strOption
-    };
-    str+="</table>";
-    document.getElementById("res").innerHTML=str
+        };
+        document.getElementById("DDuniversities").innerHTML=strOption
+        str+="</table>";
+        document.getElementById("res").innerHTML=str
 };
 async function deleteUniversity(){
     let deleteUniversity=document.getElementById("DDuniversities").value
     let res=await (fetch(`/delete/${deleteUniversity}`,{"method":"DELETE"}));
-    console.log(res)
     getAll();
-}
+};
 async function addUniversities(){
     let domain=document.getElementById("domain").value
     let web_page=document.getElementById("web_page").value
@@ -36,12 +35,10 @@ async function addUniversities(){
         body:`{"domain":"${domain}", "web_page":"${web_page}","name":"${name}","counter":"${counter}"}`
     }
     let res=await (fetch("/add",initParam));
-    console.log(res)
     getAll(); 
 };
 async function updateStudent(index){
     let res=await(fetch(`/edit/${index}`,{"method":"PUT"}));
-    console.log(res)
     getAll();  
 };
 
