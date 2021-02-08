@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="client.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="getAll()">
+    <h1>Welcome to the Academy Center</h1>
+    <h2>Add Academic Center</h2>
+    <div>
+      <label>Name Of University:</label>
+      <input type="text" id="name"/>
+      <br/>
+      <label>Domain Of University:</label>
+      <input  id="domain"/>
+      <br/>
+      <label>Web Page Of University:</label>
+      <input  id="web_page"/>
+      <br/>
+      <label>Amount Of Students:</label>
+      <input type="int" id="counter"/>
+      <br/>
+      <button onclick="addUniversities()">Add me</button>
+    </div>
+    <div>
+      <h2>Delete Academic Center</h2>
+      <select id="DDuniversities"></select>
+      <button onclick="deleteUniversity()">DELETE</button>
+    </div>
+    <h2>All Info About Academic Center</h2>
+    <div id="res"></div>
+</body>
+</html>
